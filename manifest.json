@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "insta",
+  "version": "1.0.0",
+  "description": "Help to download instagram photos and Profile Pic in one click",
+  "permissions": ["storage", "tabs", "*instagram.com*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.instagram.com/*"],
+      "js": ["contents.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "asset/icon16.png",
+        "asset/icon48.png",
+        "asset/icon128.png",
+        "assets/1.png"
+      ],
+      "matches": ["https://*.instagram.com/*"]
+    }
+  ],
+
+  "icons": {
+    "16": "assets/icon16.png",
+    "48": "assets/icon48.png",
+    "128": "assets/icon128.png"
+  },
+
+  "action": {
+    "default_title": "My instagram Bookmark",
+    "default_popup": "popup.html"
+  }
+}
