@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "Insta Pics downloader",
+  "version": "0.0.0.3",
+  "description": "Download instagram photos and Profile Pics in one click",
+  "permissions": ["tabs", "*instagram.com*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.instagram.com/*"],
+      "js": ["contents.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "asset/icon16.png",
+        "asset/icon48.png",
+        "asset/icon128.png",
+        "assets/1.png"
+      ],
+      "matches": ["https://*.instagram.com/*"]
+    }
+  ],
+
+  "icons": {
+    "16": "assets/icon16.png",
+    "48": "assets/icon48.png",
+    "128": "assets/icon128.png"
+  },
+
+  "action": {
+    "default_title": "Insta Pics Downloader",
+    "default_popup": "popup.html"
+  }
+}
